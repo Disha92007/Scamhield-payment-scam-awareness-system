@@ -18,7 +18,7 @@ async function analyze() {
   if (!message) { messageBox.focus(); showError("Please paste a message first."); return; }
   analyzeBtn.disabled = true; analyzeBtn.textContent = "Analyzing message…";
   try {
-    const response = await fetch("/api/analyze", {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({message})});
+    const response = await fetch("fetch("https://scamshield-backend-kbft.onrender.com/api/analyze", {", {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({message})});
     const data = await response.json();
     if (!response.ok) throw new Error(data.error || "Could not analyze message.");
     renderResult(data);
@@ -38,7 +38,7 @@ function escapeHtml(value) { return String(value).replace(/[&<>"']/g, c => ({"&"
 
 async function loadSamples() {
   try {
-    const response = await fetch("/api/samples");
+    const response = await fetch("fetch("https://scamshield-backend-kbft.onrender.com/api/samples");");
     const samples = await response.json();
     sampleList.innerHTML = samples.map(s => `<button type="button" class="sample-item" data-id="${s.id}"><span>${escapeHtml(s.title)}</span><span class="risk-badge ${escapeHtml(s.expected_risk)}">${escapeHtml(s.expected_risk)} RISK</span></button>`).join("");
     sampleList.querySelectorAll("button").forEach((button, index) => button.addEventListener("click", () => {
@@ -50,7 +50,7 @@ async function loadSamples() {
 
 async function loadQuiz() {
   try {
-    const response = await fetch("/api/quiz"); quiz = await response.json();
+    const response = await fetch("fetch("https://scamshield-backend-kbft.onrender.com/api/quiz");"); quiz = await response.json();
     if (!quiz.length) throw new Error("No quiz questions found.");
     quizIndex = 0; score = 0; renderQuestion();
   } catch { document.querySelector("#questionText").textContent = "Quiz unavailable. Check database setup and refresh."; }
@@ -73,7 +73,7 @@ function renderQuestion() {
 async function submitAnswer(id, answer, clicked) {
   if (answered) return; answered = true;
   try {
-    const response = await fetch("/api/quiz/answer", {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({question_id:id,answer})});
+    const response = await fetch("fetch("https://scamshield-backend-kbft.onrender.com/api/quiz");", {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({question_id:id,answer})});
     const data = await response.json(); if (!response.ok) throw new Error(data.error);
     const buttons = [...document.querySelectorAll(".option")]; buttons.forEach(b => b.disabled = true);
     buttons[data.correct_answer]?.classList.add("correct");
