@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ScamShield payment scam awareness and educational message scanner.">
+  <title>ScamShield — Payment Scam Awareness System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home"><span class="brand-icon">◇</span><span><b>Scam<span>Shield</span></b><small>PAYMENT SCAM AWARENESS SYSTEM</small></span></a>
+  <nav><a href="#scanner">Scanner</a><a href="#samples">Sample Tests</a><a href="#rules">Golden Rules</a><a href="#quiz">Spot-the-Scam Quiz</a><a href="#help">Helplines</a></nav>
+  <span class="privacy-pill"><i></i> No message storage</span>
+</header>
+<main>
+<section class="hero" id="home">
+  <h1>Spot Payment Scams <span>Before They Drain Your Account</span></h1>
+  <p>Paste suspicious SMS alerts, UPI cashback claims, or urgent payment notices. Our transparent rule-based engine explains warning signs and shows you how to stay safe.</p>
+  <div class="stats">
+    <div class="stat"><strong>8+</strong><span>SCAM INDICATORS</span></div>
+    <div class="stat"><strong>0</strong><span>MESSAGES STORED</span></div>
+    <div class="stat"><strong>100%</strong><span>TRANSPARENT RULES</span></div>
+    <div class="stat"><strong>1930</strong><span>CYBER FRAUD HELPLINE</span></div>
+  </div>
+</section>
+<section class="scanner-section" id="scanner">
+  <div class="section-heading"><span class="mini-icon">▣</span><div><h2>Message Input Console</h2><p>Analyze a suspicious message without saving its content.</p></div><span class="tag">PYTHON RULE ENGINE</span></div>
+  <div class="scanner-grid">
+    <div class="panel">
+      <label for="message">Paste SMS, WhatsApp message, or payment notification</label>
+      <textarea id="message" maxlength="4000" placeholder="Example: Congratulations! You received Rs 4,999 cashback. Enter your UPI PIN to claim..."></textarea>
+      <div class="textarea-meta"><span id="charCount">0 / 4000 characters</span><button id="clearBtn" class="text-button" type="button">Clear</button></div>
+      <button id="analyzeBtn" class="primary-btn" type="button"><span>⌕</span> Analyze Message</button>
+      <div class="sample-header" id="samples"><b>⚡ Quick Hackathon Test Samples</b><small>Click any sample to load it</small></div>
+      <div id="sampleList" class="sample-list"><p class="muted">Loading test cases…</p></div>
+    </div>
+    <div class="panel result-panel" aria-live="polite">
+      <div class="section-heading compact"><span class="mini-icon">⬡</span><h2>Security Threat Assessment</h2></div>
+      <div id="result" class="empty-result"><div class="shield">⬡</div><h3>Scanner Ready</h3><p>Paste a suspicious message or select a test case to inspect threat indicators and safety advice.</p></div>
+    </div>
+  </div>
+</section>
+<section class="rules-section" id="rules">
+  <div class="center-heading"><span class="kicker">CYBERSECURITY AWARENESS</span><h2>The 4 Golden Rules of Payment Safety</h2><p>Pause, verify, and protect your financial information.</p></div>
+  <div class="rules-grid">
+    <article class="rule-card"><span class="rule-icon coral">▣</span><small>CRUCIAL RULE #1</small><h3>UPI PIN is ONLY for Debiting Money</h3><b>You never need to enter a UPI PIN to receive money.</b><p>A UPI PIN authorizes a payment from your account. Never enter it to receive cashback, a refund, or a buyer's payment.</p></article>
+    <article class="rule-card"><span class="rule-icon yellow">▦</span><small>CRUCIAL RULE #2</small><h3>QR Codes Only SEND Money</h3><b>Scanning a QR code can lead to a payment request.</b><p>Be suspicious if someone says to scan a code and enter your PIN to receive money for an item you are selling.</p></article>
+    <article class="rule-card featured"><span class="rule-icon blue">▣</span><small>CRUCIAL RULE #3</small><h3>Beware Fake Payment Screenshots</h3><b>Never trust a screenshot as proof of credit.</b><p>Fraudsters can edit screenshots. Check the transaction in your own bank app before handing over goods.</p></article>
+    <article class="rule-card"><span class="rule-icon purple">◷</span><small>CRUCIAL RULE #4</small><h3>Bank Officials Never Ask for OTP</h3><b>Never share OTPs, passwords, or PINs.</b><p>Do not share these details over calls, SMS, or chat. Contact your bank using an official channel.</p></article>
+  </div>
+</section>
+<section class="quiz-section" id="quiz">
+  <div class="center-heading"><span class="kicker">INTERACTIVE CHALLENGE</span><h2>Spot-the-Scam Interactive Quiz</h2><p>Test your judgement against everyday payment scam scenarios.</p></div>
+  <div class="quiz-card" id="quizCard"><div class="quiz-top"><span id="quizProgress">Loading quiz…</span><span id="quizScore">Score: 0</span></div><div class="progress"><div id="progressFill"></div></div><h3 id="questionText">Loading question…</h3><div id="options" class="options"></div><div id="quizFeedback" class="feedback" hidden></div><button id="nextQuestion" class="primary-btn" type="button" hidden>Next Question →</button></div>
+</section>
+<section class="help-section" id="help"><div class="help-icon">☎</div><div><h2>Victim of Online Fraud? Act Quickly.</h2><p>If money has been lost to cyber fraud in India, call <b>1930</b> promptly and report at the official portal. Contact your bank through its official channel too.</p><div class="help-actions"><a class="help-btn" href="tel:1930">☎ Call Cyber Fraud Helpline: 1930</a><a class="secondary-btn" href="https://cybercrime.gov.in/" target="_blank" rel="noopener noreferrer">Visit cybercrime.gov.in ↗</a></div></div></section>
+<section class="notice-grid"><article class="notice"><h3>🔒 Privacy & No Message Storage</h3><p>Messages are analyzed in memory and are not written to the database or log by this app. Avoid submitting account numbers, passwords, OTPs, or other sensitive information.</p></article><article class="notice"><h3>⚖️ Educational Disclaimer & Transparency</h3><p>ScamShield uses transparent heuristic rules. It does not guarantee fraud detection, and a low-risk result does not prove a message is safe. Verify financial requests with your bank or official provider.</p></article></section>
+</main>
+<footer><div><b>Scam<span>Shield</span></b><p>© 2026 Payment Scam Awareness System </p></div><div class="tech-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Python Flask</span><span>MySQL</span></div></footer>
+<script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</body>
+</html>
